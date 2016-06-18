@@ -2,8 +2,7 @@
 # -*- coding: utf-8 -*-
 
 for i in range(int(input(""))):
-    l, s = [int(x) for x in input("").split()], 0
-    l.sort()
+    l, s = sorted([int(x) for x in input("").split()]), 0
 
     for i in range(l[0] + 1, l[1]):
         if i%2 != 0:
