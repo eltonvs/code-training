@@ -4,16 +4,16 @@
 x, y = (float(x) for x in input("").split())
 
 if x == 0 and y == 0:
-	print("Origem")
+    print("Origem")
 elif x == 0:
-	print("Eixo Y")
+    print("Eixo Y")
 elif y == 0:
-	print("Eixo X")
+    print("Eixo X")
 elif x > 0 and y > 0:
-	print("Q1")
+    print("Q1")
 elif x < 0 and y > 0:
-	print("Q2")
+    print("Q2")
 elif x < 0 and y < 0:
-	print("Q3")
+    print("Q3")
 else:
-	print("Q4")
+    print("Q4")
