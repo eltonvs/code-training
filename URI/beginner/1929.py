@@ -13,7 +13,7 @@ if (abs(b - c) < a < b + c or
     abs(a - d) < c < a + d or
     abs(b - d) < c < b + d or
     abs(a - b) < d < a + b or
-    abs(a - c) < d < a + a or
+    abs(a - c) < d < a + c or
     abs(b - c) < d < b + c):
     t = "S"
 
