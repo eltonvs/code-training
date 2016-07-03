@@ -9,20 +9,17 @@ int main() {
 
     while (scanf("%i", &n) != EOF && n) {
         std::list<int> cards(mask, mask + n);
-        printf("Discarded cards: ");
         bool fst = true;
         while (cards.size() > 1) {
-            int tmp = cards.front();
-            cards.pop_front();
             if (fst) {
                 fst = false;
-                printf("%i", tmp);
+                printf("Discarded cards: %i", cards.front());
             } else {
-                printf(", %i", tmp);
+                printf(", %i", cards.front());
             }
-            tmp = cards.front();
             cards.pop_front();
-            cards.push_back(tmp);
+            cards.push_back(cards.front());
+            cards.pop_front();
         }
         printf("\nRemaining card: %i\n", cards.front());
     }
