@@ -4,29 +4,30 @@
 
 int main() {
     int s, b;
-    std::vector<int> line;
+    std::vector<int> right(100001);
+    std::vector<int> left(100001);
 
     while (scanf("%i %i", &s, &b) != EOF && (s || b)) {
-        // Resizes vector to fit s soldiers
-        line.resize(s);
         // Fills each position of vector with the soldier number
-        std::iota(line.begin(), line.end(), 1);
+        std::iota(right.begin(), right.begin() + s + 1, 1);
+        std::iota(left.begin(), left.begin() + s + 1, -1);
+        right[s] = -1;
+        left[1]  = -1;
 
         int l, r;
         // Read the left and right values (killed soldiers)
         for (int i = 0; i < b; i++) {
             scanf("%i %i", &l, &r);
-            auto fst = std::lower_bound(line.cbegin(), line.cend(), l);
-            auto lst = std::lower_bound(fst, line.cend(), r);
-            if (fst == line.cbegin())
+            right[left[l]] = right[r];
+            left[right[r]] = left[l];
+            if (left[l] == -1)
                 printf("* ");
             else
-                printf("%i ", *(fst - 1));
-            if (lst + 1 == line.cend())
+                printf("%i ", left[l]);
+            if (right[r] == -1)
                 printf("*\n");
             else
-                printf("%i\n", *(lst + 1));
-            line.erase(fst, lst + 1);
+                printf("%i\n", right[r]);
         }
 
         printf("-\n");
