@@ -7,7 +7,7 @@ int main() {
 
     if (a%b != 0 && d%c != 0) {
         for (long long int i = a; i <= c; i += a) {
-            int (i%a == 0 && i%b != 0 && c%i == 0 && d%i != 0) {
+            if (i%a == 0 && i%b != 0 && c%i == 0 && d%i != 0) {
                 n = i;
                 break;
             }
