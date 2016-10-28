@@ -1,2 +1,2 @@
-# code_training
+# Code Training
 Resolution from some programming exercises
